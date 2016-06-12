@@ -49,5 +49,21 @@ namespace ArvestusAPI.Services
                 _repo.Delete(questionId);
             }
         }
+
+        public bool ToggleStatus(int id)
+        {
+            Question question = _repo.GetById(id);
+
+            if (question != null)
+            {
+                question.IsActive = question.IsActive == QuestionActivity.Active
+                    ? QuestionActivity.Inactive
+                    : QuestionActivity.Active;
+                _repo.Update(question);
+                return true;
+            }
+
+            return false;
+        }
     }
 }

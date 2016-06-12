@@ -15,7 +15,7 @@ namespace DAL.Repositories
 
         }
 
-        public List<Question> GetListByQuestion(int questionId)
+        public List<Answer> GetListByQuestion(int questionId)
         {
             //start building up the query
             return DbSet.Where(x => x.QuestionId == questionId).Include(p => p.Question).ToList();

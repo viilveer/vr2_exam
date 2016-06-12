@@ -17,37 +17,28 @@ namespace ArvestusAPI.Services
             _repo = repo;
         }
 
-        public void CreateAnswer(QuestionEdit model)
+        public void CreateAnswer(AnswerEdit model)
         {
-            //_repo.Add(QuestionFactroy.CreateFromQuestionCreate(model));
+            _repo.Add(AnswerFactory.CreateAnswerFromAnswerEdit(model));
         }
 
-        public void EditAnswer(int questionId, QuestionEdit model)
+        public void EditAnswer(int questionId, AnswerEdit model)
         {
-            //Question question = _repo.GetById(questionId);
-            //question = model.UpdateQuestion(question, model);
-            //_repo.Update(question);
+            Answer answer = _repo.GetById(questionId);
+            answer = model.UpdateAnswer(answer, model);
+            _repo.Update(answer);
         }
 
 
-        public List<QuestionView> GetAnswers(int questionId)
+        public List<AnswerView> GetAnswers(int questionId)
         {
-            //return _repo.GetList(question, description).Select(QuestionViewFactory.CreateFromQuestion).ToList();
+            return _repo.GetListByQuestion(questionId).Select(AnswerViewFactory.CreateFromAnswer).ToList();
         }
 
-        public bool CanEdit(int questionId)
-        {
-            Question question = _repo.GetById(questionId);
 
-            return question?.IsActive == QuestionActivity.Active;
-        }
-
-        public void Delete(int questionId)
+        public void Delete(int answerId)
         {
-            if (CanEdit(questionId))
-            {
-                _repo.Delete(questionId);
-            }
+           _repo.Delete(answerId);
         }
     }
 }

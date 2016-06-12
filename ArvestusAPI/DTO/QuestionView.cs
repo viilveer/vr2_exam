@@ -12,6 +12,7 @@ namespace ArvestusAPI.DTO
 
         public string Question { get; set; }
         public string Description { get; set; }
+        public QuestionActivity IsActive { get; set; }
 
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
@@ -30,6 +31,7 @@ namespace ArvestusAPI.DTO
                 Description = question.Description,
                 CreatedAt = question.CreatedAt,
                 UpdatedAt = question.UpdatedAt,
+                IsActive = question.IsActive,
                 QuestionDate = question.QuestionDateTime
             };
         }

@@ -3,48 +3,30 @@ using System.Web.Http;
 using ArvestusAPI.DTO;
 using ArvestusAPI.Services;
 using DAL.Interfaces;
-using NLog;
 
 
 namespace ArvestusAPI.Controllers
 {
-    [System.Web.Http.RoutePrefix("api/Question")]
-    public class QuestionController : ApiController
+    [System.Web.Http.RoutePrefix("api/Answer")]
+    public class AnswerController : ApiController
     {
-        private readonly Logger _logger = LogManager.GetCurrentClassLogger();
-        private readonly string _instanceId = Guid.NewGuid().ToString();
-
         private readonly IUOW _uow;
 
-        public QuestionController(IUOW uow)
+        public AnswerController(IUOW uow)
         {
-            _logger.Debug("InstanceId: " + _instanceId);
             _uow = uow;
         }
 
         [HttpGet]
         [Route("")]
-        public IHttpActionResult Index(string description = "", string question = "")
+        public IHttpActionResult Index(int questionId)
         {
-            QuestionService service = new QuestionService(_uow.GetRepository<IQuestionRepository>());
+            AnswerService service = new AnswerService(_uow.GetRepository<IAnswerRepository>());
 
-            return Ok(service.GetQuestions(question, description));
+            return Ok(service.GetAnswers(questionId));
         }
 
-        [HttpPost]
-        [Route("")]
-        public IHttpActionResult Create(QuestionEdit model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            (new QuestionService(_uow.GetRepository<IQuestionRepository>())).CreateQuestion(model);
-            _uow.Commit();
-
-            return Ok(model);
-        }
+        
 
         [HttpDelete]
         [Route("{id}")]
@@ -55,7 +37,7 @@ namespace ArvestusAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-           (new QuestionService(_uow.GetRepository<IQuestionRepository>())).Delete(id);
+           (new AnswerService(_uow.GetRepository<IAnswerRepository>())).Delete(id);
             _uow.Commit();
 
             return Ok();
@@ -64,23 +46,20 @@ namespace ArvestusAPI.Controllers
 
         [HttpPut]
         [Route("{id}")]
-        public IHttpActionResult Edit(int id, QuestionEdit model)
+        public IHttpActionResult Edit(int id, AnswerEdit model)
         {
-            QuestionService service = new QuestionService(_uow.GetRepository<IQuestionRepository>());
-            //if (service.CanEdit(id))
-            //{
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
+            AnswerService service = new AnswerService(_uow.GetRepository<IAnswerRepository>());
 
-                service.EditQuestion(id, model);
-                _uow.Commit();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-                return Ok(model);
-            //}
-            ////ModelState.AddModelError("IsActive", "Question must be inactive to edit");
-            //return BadRequest(ModelState);
+            service.EditAnswer(id, model);
+            _uow.Commit();
+
+            return Ok(model);
+          
         }
 
     }

@@ -1,24 +1,18 @@
-﻿using System;
-using System.Web.Http;
+﻿using System.Web.Http;
 using ArvestusAPI.DTO;
 using ArvestusAPI.Services;
 using DAL.Interfaces;
-using NLog;
 
 
 namespace ArvestusAPI.Controllers
 {
-    [System.Web.Http.RoutePrefix("api/Question")]
+    [RoutePrefix("api/Question")]
     public class QuestionController : ApiController
     {
-        private readonly Logger _logger = LogManager.GetCurrentClassLogger();
-        private readonly string _instanceId = Guid.NewGuid().ToString();
-
         private readonly IUOW _uow;
 
         public QuestionController(IUOW uow)
         {
-            _logger.Debug("InstanceId: " + _instanceId);
             _uow = uow;
         }
 
@@ -46,6 +40,21 @@ namespace ArvestusAPI.Controllers
             return Ok(model);
         }
 
+        [HttpPost]
+        [Route("Answer")]
+        public IHttpActionResult Create(AnswerEdit model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            (new AnswerService(_uow.GetRepository<IAnswerRepository>())).CreateAnswer(model);
+            _uow.Commit();
+
+            return Ok(model);
+        }
+
         [HttpDelete]
         [Route("{id}")]
         public IHttpActionResult Delete(int id)
@@ -67,8 +76,8 @@ namespace ArvestusAPI.Controllers
         public IHttpActionResult Edit(int id, QuestionEdit model)
         {
             QuestionService service = new QuestionService(_uow.GetRepository<IQuestionRepository>());
-            //if (service.CanEdit(id))
-            //{
+            if (service.CanEdit(id))
+            {
                 if (!ModelState.IsValid)
                 {
                     return BadRequest(ModelState);
@@ -78,10 +87,25 @@ namespace ArvestusAPI.Controllers
                 _uow.Commit();
 
                 return Ok(model);
-            //}
-            ////ModelState.AddModelError("IsActive", "Question must be inactive to edit");
-            //return BadRequest(ModelState);
+            }
+            ModelState.AddModelError("IsActive", "Question must be inactive to edit");
+            return BadRequest(ModelState);
         }
 
+        [HttpPut]
+        [Route("toggle-status/{id}")]
+        public IHttpActionResult EToggleStatus(int id)
+        {
+            QuestionService service = new QuestionService(_uow.GetRepository<IQuestionRepository>());
+
+            if (service.ToggleStatus(id))
+            {
+                _uow.Commit();
+                return Ok();
+            }
+            return BadRequest();
+
+           
+        }
     }
 }

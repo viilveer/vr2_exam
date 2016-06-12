@@ -10,8 +10,8 @@ namespace Domain
 {
     public enum QuestionActivity
     {
-        Active,
         Inactive,
+        Active,
     }
 
     public class Question : BaseEntity

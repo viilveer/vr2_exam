@@ -1,8 +1,10 @@
-﻿using Domain;
+﻿using System.Collections.Generic;
+using Domain;
 
 namespace DAL.Interfaces
 {
-    interface IAnswerRepository : IBaseRepository<Answer>
+    public interface IAnswerRepository : IBaseRepository<Answer>
     {
+        List<Answer> GetListByQuestion(int questionId);
     }
 }
