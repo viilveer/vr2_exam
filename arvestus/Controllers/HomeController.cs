@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using API.DAL.Interfaces;
 using Arvestus.ViewModels;
-using DAL.Interfaces;
 using NLog;
 
 namespace Arvestus.Controllers
@@ -25,10 +25,7 @@ namespace Arvestus.Controllers
 
         public ActionResult Index()
         {
-            TestIndexModel model = new TestIndexModel()
-            {
-            };
-            return View(model);
+            return View();
         }
 
         public ActionResult About()

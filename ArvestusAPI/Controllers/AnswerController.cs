@@ -18,15 +18,11 @@ namespace ArvestusAPI.Controllers
         }
 
         [HttpGet]
-        [Route("")]
-        public IHttpActionResult Index(int questionId)
+        [Route("{answer}")]
+        public IHttpActionResult Index(string answer)
         {
-            AnswerService service = new AnswerService(_uow.GetRepository<IAnswerRepository>());
-
-            return Ok(service.GetAnswers(questionId));
+            return Ok((new AnswerService(_uow.GetRepository<IAnswerRepository>())).GetListByAnswerText(answer));
         }
-
-        
 
         [HttpDelete]
         [Route("{id}")]

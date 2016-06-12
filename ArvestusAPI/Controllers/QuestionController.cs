@@ -18,11 +18,11 @@ namespace ArvestusAPI.Controllers
 
         [HttpGet]
         [Route("")]
-        public IHttpActionResult Index(string description = "", string question = "")
+        public IHttpActionResult Index(string name = "", string description = "")
         {
             QuestionService service = new QuestionService(_uow.GetRepository<IQuestionRepository>());
 
-            return Ok(service.GetQuestions(question, description));
+            return Ok(service.GetQuestions(name, description));
         }
 
         [HttpPost]
@@ -40,9 +40,21 @@ namespace ArvestusAPI.Controllers
             return Ok(model);
         }
 
+        [HttpGet]
+        [Route("{id}")]
+        public IHttpActionResult GetOne(int id)
+        {
+            QuestionView model = (new QuestionService(_uow.GetRepository<IQuestionRepository>())).GetOne(id);
+            if (model != null)
+            {
+                return Ok(model);
+            }
+            return BadRequest("Not found");
+        }
+
         [HttpPost]
         [Route("Answer")]
-        public IHttpActionResult Create(AnswerEdit model)
+        public IHttpActionResult CreateAnswer(AnswerEdit model)
         {
             if (!ModelState.IsValid)
             {
@@ -53,6 +65,15 @@ namespace ArvestusAPI.Controllers
             _uow.Commit();
 
             return Ok(model);
+        }
+
+        [HttpGet]
+        [Route("{questionId}/Answers")]
+        public IHttpActionResult Index(int questionId)
+        {
+            AnswerService service = new AnswerService(_uow.GetRepository<IAnswerRepository>());
+
+            return Ok(service.GetAnswers(questionId));
         }
 
         [HttpDelete]

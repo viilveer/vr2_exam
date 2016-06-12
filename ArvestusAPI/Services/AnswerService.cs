@@ -36,6 +36,12 @@ namespace ArvestusAPI.Services
         }
 
 
+        public List<AnswerView> GetListByAnswerText(String answer)
+        {
+            return _repo.GetListByAnswerText(answer).Select(AnswerViewFactory.CreateFromAnswer).ToList();
+        }
+
+
         public void Delete(int answerId)
         {
            _repo.Delete(answerId);

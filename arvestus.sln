@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArvestusAPI", "ArvestusAPI\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.DAL", "API.DAL\API.DAL.csproj", "{310B8F5F-294C-4B99-BF8A-51794B6E6B15}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientBLL", "ClientBLL\ClientBLL.csproj", "{EDA7F29E-A871-4573-98E6-6260F1DBB895}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{310B8F5F-294C-4B99-BF8A-51794B6E6B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{310B8F5F-294C-4B99-BF8A-51794B6E6B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{310B8F5F-294C-4B99-BF8A-51794B6E6B15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDA7F29E-A871-4573-98E6-6260F1DBB895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDA7F29E-A871-4573-98E6-6260F1DBB895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDA7F29E-A871-4573-98E6-6260F1DBB895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDA7F29E-A871-4573-98E6-6260F1DBB895}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,92 @@
+﻿@model ClientBLL.ViewModels.QuestionDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Question</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Model.Question)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model.Question)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model.QuestionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model.QuestionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model.CreatedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model.CreatedAt)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model.UpdatedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model.UpdatedAt)
+        </dd>
+
+     
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+<p>
+    @Html.ActionLink("Create New", "CreateAnswer", new {questionId = Model.Model.Id})
+</p>
+<h2>Vastused</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Answers.FirstOrDefault().Answer)
+        </th>
+        
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Answers)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Answer)
+            </td>
+        </tr>
+    }
+
+</table>

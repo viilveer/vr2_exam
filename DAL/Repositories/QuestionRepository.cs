@@ -27,7 +27,7 @@ namespace DAL.Repositories
 
             if (description != null)
             {
-                res = res.Where(x => x.QuestionName.Contains(description));
+                res = res.Where(x => x.Description.Contains(description));
             }
 
 

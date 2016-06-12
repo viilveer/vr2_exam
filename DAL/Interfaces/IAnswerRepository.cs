@@ -6,5 +6,8 @@ namespace DAL.Interfaces
     public interface IAnswerRepository : IBaseRepository<Answer>
     {
         List<Answer> GetListByQuestion(int questionId);
+
+
+        List<Answer> GetListByAnswerText(string answer);
     }
 }

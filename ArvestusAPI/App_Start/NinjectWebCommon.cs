@@ -82,9 +82,9 @@ namespace ArvestusAPI
             kernel.Bind<IAuthenticationManager>().ToMethod(a => HttpContext.Current.GetOwinContext().Authentication).InRequestScope();
 
             // http://stackoverflow.com/questions/5646820/logger-wrapper-best-practice
-            kernel.Bind<NLog.ILogger>().ToMethod(a => NLog.LogManager.GetCurrentClassLogger());
 
             kernel.Bind<IUserNameResolver>().ToMethod(a => new UserNameResolver(UserNameFactory.GetCurrentUserNameFactory())).InRequestScope();
+            kernel.Bind<NLog.ILogger>().ToMethod(a => NLog.LogManager.GetCurrentClassLogger());
             kernel.Bind<IUserStore<ApplicationUser>>().To<UserStore<ApplicationUser>>();
             kernel.Bind<UserManager<ApplicationUser>>().ToSelf();
         }

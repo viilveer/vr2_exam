@@ -65,5 +65,10 @@ namespace ArvestusAPI.Services
 
             return false;
         }
+
+        public QuestionView GetOne(int id)
+        {
+            return QuestionViewFactory.CreateFromQuestion(_repo.GetById(id));
+        }
     }
 }

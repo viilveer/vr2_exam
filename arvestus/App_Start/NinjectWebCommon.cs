@@ -1,11 +1,10 @@
 using System;
 using System.Web;
+using API.DAL.Interfaces;
+using API_DAL;
 using Arvestus;
 using Arvestus.Helpers;
 using Arvestus.Models;
-using DAL;
-using DAL.Helpers;
-using DAL.Interfaces;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
@@ -72,10 +71,6 @@ namespace Arvestus
 
             kernel.Bind<IUOW>().To<UOW>().InRequestScope();
 
-            kernel.Bind<IDbContext>().To<DataBaseContext>().InRequestScope();
-            kernel.Bind<EFRepositoryFactories>().To<EFRepositoryFactories>().InSingletonScope();
-            kernel.Bind<IEFRepositoryProvider>().To<EFRepositoryProvider>().InRequestScope();
-
             kernel.Bind<ApplicationSignInManager>().To<ApplicationSignInManager>().InRequestScope();
             kernel.Bind<ApplicationUserManager>().To<ApplicationUserManager>().InRequestScope();
 
@@ -85,7 +80,6 @@ namespace Arvestus
             // http://stackoverflow.com/questions/5646820/logger-wrapper-best-practice
             kernel.Bind<NLog.ILogger>().ToMethod(a => NLog.LogManager.GetCurrentClassLogger());
 
-            kernel.Bind<IUserNameResolver>().ToMethod(a => new UserNameResolver(UserNameFactory.GetCurrentUserNameFactory())).InRequestScope();
             kernel.Bind<IUserStore<ApplicationUser>>().To<UserStore<ApplicationUser>>();
             kernel.Bind<UserManager<ApplicationUser>>().ToSelf();
         }        

@@ -197,6 +197,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\QuestionsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -268,6 +269,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Questions\Create.cshtml" />
+    <Content Include="Views\Questions\Delete.cshtml" />
+    <Content Include="Views\Questions\Details.cshtml" />
+    <Content Include="Views\Questions\Edit.cshtml" />
+    <Content Include="Views\Questions\Index.cshtml" />
+    <Content Include="Views\Questions\CreateAnswer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -279,9 +286,13 @@
     <Content Include="Scripts\jquery-2.2.3.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{04e7894a-d416-4517-bb7e-0905c005f867}</Project>
-      <Name>DAL</Name>
+    <ProjectReference Include="..\API.DAL\API.DAL.csproj">
+      <Project>{310b8f5f-294c-4b99-bf8a-51794b6e6b15}</Project>
+      <Name>API.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClientBLL\ClientBLL.csproj">
+      <Project>{eda7f29e-a871-4573-98e6-6260f1dbb895}</Project>
+      <Name>ClientBLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataAnnotations\DataAnnotations.csproj">
       <Project>{4e5d1c07-e5b7-427e-8a1f-9fbe05dd0516}</Project>
