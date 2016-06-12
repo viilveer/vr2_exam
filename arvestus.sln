@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arvestus", "arvestus\Arvestus.csproj", "{D61CFDF4-C424-4FD6-852D-D253DA05C1F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{FC41C6F0-8B86-46E9-8B1A-E7B0256D4D6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{04E7894A-D416-4517-BB7E-0905C005F867}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources", "Resources\Resources.csproj", "{97C013CD-DFDF-410D-B493-429AB13CA261}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAnnotations", "DataAnnotations\DataAnnotations.csproj", "{4E5D1C07-E5B7-427E-8A1F-9FBE05DD0516}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArvestusAPI", "ArvestusAPI\ArvestusAPI.csproj", "{0BC37739-D02D-4921-9778-5E424EDBBFDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.DAL", "API.DAL\API.DAL.csproj", "{310B8F5F-294C-4B99-BF8A-51794B6E6B15}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D61CFDF4-C424-4FD6-852D-D253DA05C1F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D61CFDF4-C424-4FD6-852D-D253DA05C1F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D61CFDF4-C424-4FD6-852D-D253DA05C1F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D61CFDF4-C424-4FD6-852D-D253DA05C1F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC41C6F0-8B86-46E9-8B1A-E7B0256D4D6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC41C6F0-8B86-46E9-8B1A-E7B0256D4D6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC41C6F0-8B86-46E9-8B1A-E7B0256D4D6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC41C6F0-8B86-46E9-8B1A-E7B0256D4D6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04E7894A-D416-4517-BB7E-0905C005F867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04E7894A-D416-4517-BB7E-0905C005F867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04E7894A-D416-4517-BB7E-0905C005F867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04E7894A-D416-4517-BB7E-0905C005F867}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97C013CD-DFDF-410D-B493-429AB13CA261}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97C013CD-DFDF-410D-B493-429AB13CA261}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97C013CD-DFDF-410D-B493-429AB13CA261}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97C013CD-DFDF-410D-B493-429AB13CA261}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E5D1C07-E5B7-427E-8A1F-9FBE05DD0516}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E5D1C07-E5B7-427E-8A1F-9FBE05DD0516}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E5D1C07-E5B7-427E-8A1F-9FBE05DD0516}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E5D1C07-E5B7-427E-8A1F-9FBE05DD0516}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BC37739-D02D-4921-9778-5E424EDBBFDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BC37739-D02D-4921-9778-5E424EDBBFDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BC37739-D02D-4921-9778-5E424EDBBFDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BC37739-D02D-4921-9778-5E424EDBBFDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{310B8F5F-294C-4B99-BF8A-51794B6E6B15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{310B8F5F-294C-4B99-BF8A-51794B6E6B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{310B8F5F-294C-4B99-BF8A-51794B6E6B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{310B8F5F-294C-4B99-BF8A-51794B6E6B15}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

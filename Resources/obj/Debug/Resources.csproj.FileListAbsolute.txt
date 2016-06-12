@@ -1,0 +1,7 @@
+c:\Users\viilv\Documents\Visual Studio 2015\Projects\arvestus\Resources\bin\Debug\Resources.dll
+c:\Users\viilv\Documents\Visual Studio 2015\Projects\arvestus\Resources\bin\Debug\Resources.pdb
+c:\Users\viilv\Documents\Visual Studio 2015\Projects\arvestus\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+c:\Users\viilv\Documents\Visual Studio 2015\Projects\arvestus\Resources\obj\Debug\Resources.Common.resources
+c:\Users\viilv\Documents\Visual Studio 2015\Projects\arvestus\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+c:\Users\viilv\Documents\Visual Studio 2015\Projects\arvestus\Resources\obj\Debug\Resources.dll
+c:\Users\viilv\Documents\Visual Studio 2015\Projects\arvestus\Resources\obj\Debug\Resources.pdb

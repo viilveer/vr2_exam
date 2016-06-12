@@ -1,0 +1,12 @@
+c:\Users\viilv\Documents\Visual Studio 2015\Projects\arvestus\DataAnnotations\obj\Debug\DataAnnotations.csprojResolveAssemblyReference.cache
+C:\Users\viilv\documents\visual studio 2015\Projects\arvestus\DataAnnotations\bin\Debug\DataAnnotations.dll.config
+C:\Users\viilv\documents\visual studio 2015\Projects\arvestus\DataAnnotations\bin\Debug\DataAnnotations.dll
+C:\Users\viilv\documents\visual studio 2015\Projects\arvestus\DataAnnotations\bin\Debug\DataAnnotations.pdb
+C:\Users\viilv\documents\visual studio 2015\Projects\arvestus\DataAnnotations\bin\Debug\EntityFramework.dll
+C:\Users\viilv\documents\visual studio 2015\Projects\arvestus\DataAnnotations\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\viilv\documents\visual studio 2015\Projects\arvestus\DataAnnotations\bin\Debug\NLog.dll
+C:\Users\viilv\documents\visual studio 2015\Projects\arvestus\DataAnnotations\bin\Debug\EntityFramework.xml
+C:\Users\viilv\documents\visual studio 2015\Projects\arvestus\DataAnnotations\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\viilv\documents\visual studio 2015\Projects\arvestus\DataAnnotations\bin\Debug\NLog.xml
+C:\Users\viilv\documents\visual studio 2015\Projects\arvestus\DataAnnotations\obj\Debug\DataAnnotations.dll
+C:\Users\viilv\documents\visual studio 2015\Projects\arvestus\DataAnnotations\obj\Debug\DataAnnotations.pdb
